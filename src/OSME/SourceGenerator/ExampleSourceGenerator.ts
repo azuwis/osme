@@ -8,6 +8,7 @@ import { ScaleKey, Tone } from "../Common";
 import { MusicalEntry } from "../Common/Intention/IntentionEntry";
 import { DistributionEntry } from "../Common/Distribution";
 import { SystemLinesEnum } from "opensheetmusicdisplay";
+import { EngravingRules } from "opensheetmusicdisplay";
 
 export class ExampleSourceGenerator extends SourceGeneratorPlugin {
 
@@ -16,6 +17,7 @@ export class ExampleSourceGenerator extends SourceGeneratorPlugin {
     }
     public static NAME: string = "example_source_generator";
 
+    private rules: EngravingRules;
     private measureDuration: Fraction;
     private beat: Fraction;
 
@@ -27,6 +29,8 @@ export class ExampleSourceGenerator extends SourceGeneratorPlugin {
 
 
     public generate(): MusicSheet {
+
+        this.rules = new EngravingRules();
 
         this.measureDuration = new Fraction(this.options.time_signature.Rhythm.Numerator, this.options.time_signature.Rhythm.Denominator);
         this.beat = new Fraction(1, this.options.time_signature.Rhythm.Denominator);
@@ -211,7 +215,7 @@ export class ExampleSourceGenerator extends SourceGeneratorPlugin {
     }
 
     private createSourceMeasure(beginFraction: Fraction, duration: Fraction): SourceMeasure {
-        const sourceMeasure: SourceMeasure = new SourceMeasure(1);
+        const sourceMeasure: SourceMeasure = new SourceMeasure(1, this.rules);
         sourceMeasure.AbsoluteTimestamp = beginFraction;
         sourceMeasure.Duration = duration; // can be 1/1
         sourceMeasure.ActiveTimeSignature = this.options.time_signature.Rhythm; // is 4/4 in 4/4 signature

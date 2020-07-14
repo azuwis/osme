@@ -32,7 +32,7 @@ export class XMLSourceExporter {
                 lastKeyInstruction = keyInstruction;
             }
             if (lastKeyInstruction !== undefined) {
-                const accidentals: NoteEnum[] = lastKeyInstruction.getFundamentalNotesOfAccidentals();
+                const accidentals: NoteEnum[] = lastKeyInstruction.AlteratedNotes;
                 const keyType: number = this.transformer.getKeyType(lastKeyInstruction);
                 accidentals.forEach(note => {
                     accidentMaps[note] = keyType;

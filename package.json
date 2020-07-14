@@ -48,7 +48,7 @@
   },
   "homepage": "http://opensheetmusicdisplay.org",
   "dependencies": {
-    "opensheetmusicdisplay": "0.7.3",
+    "opensheetmusicdisplay": "0.8.2",
     "xmlbuilder": "^13.0.2"
   },
   "devDependencies": {

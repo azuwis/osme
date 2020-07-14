@@ -24,7 +24,7 @@ export abstract class SourceGeneratorPlugin implements OSMPlugin {
     }
 
     public generateGraphicalMusicSheet(sheet: MusicSheet): GraphicalMusicSheet {
-        const calc: MusicSheetCalculator = new VexFlowMusicSheetCalculator();
+        const calc: MusicSheetCalculator = new VexFlowMusicSheetCalculator(sheet.Rules);
         const graphic: GraphicalMusicSheet = new GraphicalMusicSheet(sheet, calc);
         calc.initialize(graphic);
         return graphic;
