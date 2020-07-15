@@ -15,6 +15,7 @@
     "tsc": "tsc",
     "build": "npm-run-all lint tsc",
     "build:doc": "cross-env STATIC_FILES_SUBFOLDER=sheets npm run build",
+    "build:lib": "webpack --progress --colors --config webpack.lib.js",
     "build:webpack": "webpack --progress --colors --config webpack.prod.js",
     "build:webpack-dev": "webpack --progress --colors --config webpack.dev.js",
     "build:webpack-sourcemap": "webpack --progress --colors --config webpack.sourcemap.js",
