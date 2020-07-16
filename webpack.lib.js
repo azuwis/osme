@@ -25,6 +25,7 @@ module.exports = merge(common, {
     optimization: {
         minimize: true
     },
+    devtool: 'source-map',
     plugins: [
         // build optimization plugins
         new webpack.LoaderOptionsPlugin({
