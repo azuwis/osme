@@ -93,8 +93,8 @@ export class ExampleSourceGenerator extends SourceGeneratorPlugin {
             } else {
                 const diffDuration: Fraction = Fraction.minus(currentMeasure.Duration, durationSum);
                 if (diffDuration.Numerator > 1) {
-                    console.log("Skip diffDuration note:");
-                    console.log(diffDuration);
+                    // console.log("Skip diffDuration note:");
+                    // console.log(diffDuration);
                 } else {
                     note = this.generateEntry(currentMeasure, staff, voice, startPosition, diffDuration, pitch);
                     durationSum.Add(diffDuration);

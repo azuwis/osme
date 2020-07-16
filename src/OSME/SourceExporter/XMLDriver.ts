@@ -127,7 +127,7 @@ export class XMLDriver {
         xmlNote.element("duration", duration);
         xmlNote.element("type", durationType);
 
-        console.log("lastAccidental:%s alterStep:%s alterString:%s", lastAccidental, alterStep, alterString);
+        // console.log("lastAccidental:%s alterStep:%s alterString:%s", lastAccidental, alterStep, alterString);
         if (lastAccidental !== 0) {
             if (lastAccidental !== alterStep && alterString !== undefined) {
                 xmlNote.element("accidental", alterString);
