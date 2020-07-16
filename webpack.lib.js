@@ -12,7 +12,7 @@ var pathsToClean = [
 
 module.exports = merge(common, {
     entry: {
-        osme: './src/OSME/SourceGenerator/ExampleSourceGenerator.ts'
+        osme: './src/index.ts'
     },
     output: {
         filename: '[name].min.js',
@@ -20,7 +20,7 @@ module.exports = merge(common, {
         library: 'osme',
         libraryTarget: 'umd'
     },
-    externals: ['opensheetmusicdisplay', 'xmlbuilder'],
+    externals: ['opensheetmusicdisplay'],
     mode: 'production',
     optimization: {
         minimize: true
