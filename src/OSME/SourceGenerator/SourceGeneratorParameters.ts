@@ -2,6 +2,7 @@ import { ScaleKey } from "../Common";
 import { Pitch, NoteEnum, AccidentalEnum, Fraction } from "opensheetmusicdisplay";
 import { ClefInstruction, MidiInstrument, RhythmInstruction } from "opensheetmusicdisplay";
 import { Distribution, DistributionEntry } from "../Common/Distribution";
+import { EngravingRules } from "opensheetmusicdisplay";
 
 /**
  * Global parameters for all sourceGenerator plugins.
@@ -29,6 +30,7 @@ export interface SourceGeneratorOptions {
     interval_settings?: IntervalSettings;
     // optional, map describing the relative frequency of Duration units
     duration_settings?: DurationSettings;
+    rules: EngravingRules;
 
     /** hashmap with further options, relies on specific plugins on their own */
     other_settings?: Map<string, any>;
